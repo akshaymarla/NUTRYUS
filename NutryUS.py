@@ -128,3 +128,91 @@ with tab3:
   #calories.append(lunch_calories)
      st.write('Lunch Calories = {}'.format(lunch_calories))
      
+ # DINNER SECTION  (To be edited)
+  
+
+with tab4:
+     #if genre == 'Dinner':
+     st.title('DINNER SECTION')
+     dinner_calories = 0
+     st.text('Quantity is taken in terms of Bowls')
+     st.write('Jeera Rice')
+     st.image('https://www.whiskaffair.com/wp-content/uploads/2021/06/Jeera-Rice-2-3-1.jpg')
+     S1=st.slider('Jeera Rice Quantity',0,5,step=1)
+     calories_Jeera = 296
+     st.write('Curd Rice')
+     st.image('https://www.vegrecipesofindia.com/wp-content/uploads/2016/07/curd-rice-2.jpg')
+     S2=st.slider('Curd Rice Quantity',0,5,step=1)
+     calories_Curd = 283
+     st.write('Butter Naan')
+     st.image('https://indianvegrecipe.com/wp-content/uploads/2019/06/butter-naan-recipe.jpg')
+     S3=st.slider('Butter Naan Quantity',0,5,step=1)
+     calories_Naan = 271
+     st.write('Roti')
+     st.image('https://www.vegrecipesofindia.com/wp-content/uploads/2015/04/tandoori-roti-recipe-1.jpg')
+     S4=st.slider('Roti Quantity',0,5,step=1)
+     calories_Roti = 150
+     st.write('Chapati')
+     st.image('https://img.onmanorama.com/content/dam/mm/en/food/features/images/2021/1/6/chapathi.jpg')
+     S5=st.slider('Chapati Quantity',0,5,step=1)
+  #S6=st.slider('Boiled Egg Quantity', 0,5,step=1)
+     calories_Chapati = 85
+  #calories_boiledegg = 1
+     st.write('Panner curry')
+     st.image('https://www.whiskaffair.com/wp-content/uploads/2019/05/Paneer-Masala-1-3.jpg')
+     S6=st.slider('Panner curry Quantity',0,5,step=1)
+     calories_Panner_curry = 205
+     st.write('Chicken curry')
+     st.image('https://static.onecms.io/wp-content/uploads/sites/9/2021/03/10/spicy-chicken-curry-FT-RECIPE0321.jpg')
+     S7=st.slider('Chicken curry Quantity',0,5,step=1)
+     calories_Chicken_curry = 271
+     st.write('Mutton curry')
+     st.image('https://www.whiskaffair.com/wp-content/uploads/2019/04/Punjabi-Mutton-Curry-5.jpg')
+     S8=st.slider('Mutton curry Quantity',0,5,step=1)
+     calories_Mutton_curry = 301
+     dinner_calories = S1*calories_Jeera + S2*calories_Curd + S3*calories_Naan + S4*calories_Roti + S5*calories_Chapati + S6*calories_Panner_curry + S7*calories_Chicken_curry +S8*calories_Mutton_curry
+  #calories.append(dinner_calories)
+     st.write('Dinner Calories = {}'.format(dinner_calories))
+     
+with tab5:
+     #Summary of all the data
+     st.write('Breakfast Calories = {}'.format(breakfast_calories))
+     st.write('Lunch Calories = {}'.format(lunch_calories))
+     st.write('Dinner Calories = {}'.format(dinner_calories))
+     total_calories = breakfast_calories + lunch_calories + dinner_calories
+     st.write('Total calories consumed today = {}'.format(total_calories))
+
+     if bmi > 16.0 and bmi < 18.5:
+          cal_1 = 3000
+          if(cal_1 > total_calories):
+               diff = cal_1 - total_calories
+               st.write('Calories left to be consumed: ')
+               st.write(diff)
+          else:
+               diff = total_calories - cal_1
+               st.write('Extra calories taken: ')
+               st.write(diff)
+     elif bmi > 18.5 and bmi < 25:
+          cal_2 = 2500
+          if(cal_2 > total_calories):
+               diff = cal_2 - total_calories
+               st.write('Calories left to be consumed: ')
+               st.write(diff)
+          else:
+               diff = total_calories - cal_2
+               st.write('Extra calories taken: ')
+               st.write(diff)
+     elif bmi > 25 and bmi < 40:
+          cal_3 = 2300
+          if(cal_3 > total_calories):
+               diff = cal_3 - total_calories
+               st.write('Calories left to be consumed: ')
+               st.write(diff)
+          else:
+               diff = total_calories - cal_3
+               st.write('Extra calories taken: ')
+               st.write(diff)
+     if st.button('Submit'):
+          st.write('Successfully submitted!')
+     else:
+          st.write('Did not submit successfully')
